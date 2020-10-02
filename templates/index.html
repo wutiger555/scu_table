@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>東吳校務系統課表</title>
+	<link rel="stylesheet" type="text/css" href="../static/login_assets/css/demo.css" />
+</head>
+<body>
+	<!-- coidea:loader START -->
+    <div class="loader">
+      <div class="lds-ripple">
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+    <!-- coidea:loader END -->
+
+    <!-- coidea:header START -->
+    <header>
+      <div class="header-inner">
+        <div class="logo">
+          <a href=""><span>title</span></a>
+        </div>
+        <nav class="navigation">
+          <li><a href="http://www.htmleaf.com/jQuery/Layout-Interface/201904095600.html"><span>Article</span></a></li>
+          <li><a href="https://github.com/COIDEAwebsite/interactive-modal-with-funny-animations" target="_blank"><span>Github</span></a></li>
+          <li><a href="http://www.htmleaf.com/"><span>jQuery</span></a></li>
+        </nav>
+      </div>
+    </header>
+    <!-- coidea:header END -->
+
+    <!-- COIDEA:modal START -->
+    <div class="modal invisible">
+      
+      <!-- COIDEA:modal:monster (open-close) START -->
+      <div class="monster-open-close" style="background-image: url(../static/login_assets/img/m-open-close.png)"></div>
+      <!-- COIDEA:modal:monster (open-close) END -->
+      
+      <!-- COIDEA:modal:inner START -->
+      <div class="modal-inner" style="background-image: url(../static/login_assets/img/landscape.png);">
+        
+        <!-- COIDEA:modal:inner:close START -->
+        <p class="close"><span></span></p>
+        <!-- COIDEA:modal:inner:close END -->
+        
+        <!-- COIDEA:modal:inner:body START -->
+        <div class="modal-body">
+          
+          <!-- COIDEA:modal:inner:body:monster (close) START -->
+          <div class="monster-close" style="background-image: url(../static/login_assets/img/m-close.png)"><span>Are you sure?</span></div>
+          <!-- COIDEA:modal:inner:body:monster (close) END -->
+          
+          <h2>登入東吳校務系統</h2>
+
+
+          <!-- COIDEA:modal:inner:body:form START -->
+          <div class="form">
+            <div class="form-holder">
+
+              <div class="monster-signup"><span style="background-image: url(../static/login_assets/img/m-signup.jpg)"></span></div>
+
+              <div class="form-holder-inner">
+                <form method="post" action="{{url_for('submit')}}">
+                  <div class="group">
+                    <input type="text" name="id" id="login" placeholder="學號" autocomplete="off" required>
+                    <input type="password" name="passwd" id="login" placeholder="密碼" autocomplete="off" required>
+                  </div>
+
+                  <div class="submit">
+                    <input type="submit" class="submit-btn" value="送出" disabled="disabled">
+                  </div>
+                </form>
+                <div class="thank-you-holder">
+                  <span>與校務系統連線中...</span>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+          <!-- COIDEA:modal:inner:body:form END -->
+
+        </div>
+        <!-- COIDEA:modal:inner:body END -->
+        
+      </div>
+      <!-- COIDEA:modal:inner END -->
+      
+    </div>
+    <!-- COIDEA:modal END -->
+
+    <!-- COIDEA:trigger START -->
+    <section class="trigger">
+      <h1>不再需要醜醜的截圖<br>也能獲得簡單漂亮的課表</h1>
+      <button id="button">登入</button>
+    </section>
+    <!-- COIDEA:trigger END -->
+
+    <script src="../static/login_assets/js/jquery-1.11.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+    <script src="https://unpkg.com/imagesloaded@4.1.4/imagesloaded.pkgd.min.js"></script>
+    <script src="../static/login_assets/js/demo.js"></script>
+</body>
+</html>

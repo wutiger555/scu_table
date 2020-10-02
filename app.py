@@ -1,5 +1,6 @@
 from flask_bootstrap import Bootstrap
 from flask import Flask, render_template, request
+from scu_request import getTable
 
 app = Flask(__name__)
 bootstrap = Bootstrap(app)
@@ -13,9 +14,9 @@ def submit():
     if request.method == 'POST':
         id = request.values['id']
         passwd = request.values['passwd']
-        print(id, passwd)
+        df = getTable(id, passwd)
         
-    return render_template('table.html')
+    return render_template('table.html', df=df)
 
 if __name__ == '__main__':
     app.run(debug=True)

@@ -2,12 +2,18 @@ import requests
 from bs4 import BeautifulSoup
 import pandas as pd
 import json
-
+import flask
 
 def getTable(id, passwd):
     r = requests.post('https://web.sys.scu.edu.tw/login0.asp', data={'id':id,'passwd':passwd})
 
     r.cookies.set('parselimit', 'Infinity')
+    r.encoding = 'big5'
+    if '登入成功！' in r.text:
+        print('login success')
+    else:
+        print('login failed')
+    
     n = requests.get('https://web.sys.scu.edu.tw/SelectCar/selcar81.asp', cookies = r.cookies, data={'procsyear':'109',
                                                                                                      'procterm':'1'})
     n.encoding = 'big5'

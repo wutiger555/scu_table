@@ -15,7 +15,7 @@ def getTable(id, passwd):
         print('login failed')
     
     n = requests.get('https://web.sys.scu.edu.tw/SelectCar/selcar81.asp', cookies = r.cookies, data={'procsyear':'109',
-                                                                                                     'procterm':'1'})
+                                                                                                     'procterm':'2'})
     n.encoding = 'big5'
     soup = BeautifulSoup(n.text,"html.parser") #將網頁資料以html.parser
     trs = soup.find_all('tr')
